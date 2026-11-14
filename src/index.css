@@ -1,0 +1,55 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --bg-canvas: #e7eaef;
+    --ink-primary: #0b0d11;
+    --ink-secondary: #2c313a;
+    --border-pill: #9da4b0;
+    --panel-blue: #3f618e;
+  }
+
+  .dark {
+    --bg-canvas: #0a0c10;
+    --ink-primary: #f4f6fa;
+    --ink-secondary: #c5ccd8;
+    --border-pill: #3a4252;
+    --panel-blue: #223b5e;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body {
+    background-color: var(--bg-canvas);
+    color: var(--ink-primary);
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    transition: background-color 200ms ease, color 200ms ease;
+  }
+}
+
+.font-cyber {
+  font-family: "Michroma", sans-serif;
+}
+
+.font-ui {
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Subtle paper/studio grain texture matching reference surface */
+.studio-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+
+@media (pointer: fine) and (hover: hover) {
+  html.bionic-cursor-active,
+  html.bionic-cursor-active * {
+    cursor: none !important;
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Cyberprompt — Red X Visors",
+  "description": "Hero showcase for Cyberprompt Red X Visors bionic eyewear and next-generation human augmentation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
