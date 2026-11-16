@@ -172,7 +172,7 @@ export const ChamferedHeroPanel: React.FC<ChamferedHeroPanelProps> = ({
           {animationSrc && (
             <img
               src={animationSrc}
-              alt="HG Klusjes gereedschap animatie"
+              alt="GH Kluswerken gereedschap animatie"
               className="relative z-10 w-full h-full object-contain block"
             />
           )}
@@ -190,7 +190,7 @@ export const ChamferedHeroPanel: React.FC<ChamferedHeroPanelProps> = ({
               className={`absolute inset-0 z-[15] w-full h-full object-contain block transition-opacity duration-200 ${
                 videoPlaying ? 'opacity-100' : 'opacity-0'
               }`}
-              aria-label="HG Klusjes hero video"
+              aria-label="GH Kluswerken hero video"
             />
           )}
         </div>

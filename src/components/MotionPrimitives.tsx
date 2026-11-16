@@ -24,7 +24,7 @@ export const ScrollProgressBar: React.FC = () => {
       aria-hidden="true"
     >
       <motion.div
-        className="h-full w-full bg-[#3F618E] dark:bg-[#7EB0F2] origin-left"
+        className="h-full w-full bg-[var(--brand-accent)] origin-left transition-colors duration-200"
         style={{ scaleX }}
       />
     </div>

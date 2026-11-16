@@ -1,21 +1,18 @@
 @import "tailwindcss";
-@custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
+  /* GH Kluswerken — Logo Kobalt Merkidentiteit */
   :root {
-    --bg-canvas: #e7eaef;
+    --bg-canvas: #eef2f7;
     --ink-primary: #0b0d11;
     --ink-secondary: #2c313a;
-    --border-pill: #9da4b0;
-    --panel-blue: #3f618e;
-  }
-
-  .dark {
-    --bg-canvas: #0a0c10;
-    --ink-primary: #f4f6fa;
-    --ink-secondary: #c5ccd8;
-    --border-pill: #3a4252;
-    --panel-blue: #223b5e;
+    --border-pill: #94a0b5;
+    --panel-blue: #0a3d8f;
+    --brand-accent: #0a3d8f;
+    --brand-accent-hover: #072b66;
+    --brand-accent-rgb: 10, 61, 143;
+    --vision-surface: #082e6e;
+    --vision-border: #174694;
   }
 
   html {
@@ -30,7 +27,6 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
-    transition: background-color 200ms ease, color 200ms ease;
   }
 }
 
@@ -42,7 +38,7 @@
   font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* Subtle paper/studio grain texture matching reference surface */
+/* Subtle paper/studio grain texture */
 .studio-grain {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
 }

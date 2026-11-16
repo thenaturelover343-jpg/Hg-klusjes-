@@ -155,7 +155,7 @@ export const BionicCursor: React.FC = () => {
       >
         {isText ? (
           /* Precision bionic caret bar over text inputs */
-          <div className="w-[2px] h-full rounded-full bg-[#3F618E] dark:bg-[#7EB0F2] shadow-[0_0_0_1px_rgba(255,255,255,0.45)] dark:shadow-[0_0_0_1px_rgba(10,12,16,0.6)]" />
+          <div className="w-[2px] h-full rounded-full bg-[var(--brand-accent)] shadow-[0_0_0_1px_rgba(255,255,255,0.45)] dark:shadow-[0_0_0_1px_rgba(10,12,16,0.6)]" />
         ) : isPointer ? (
           /* Lock-on segmented corner reticle for buttons, links, and tabs */
           <svg
@@ -167,19 +167,26 @@ export const BionicCursor: React.FC = () => {
               cx="18"
               cy="18"
               r="15.5"
-              className="fill-[#3F618E]/10 dark:fill-[#7EB0F2]/14 stroke-[#3F618E]/35 dark:stroke-[#7EB0F2]/40"
+              fill="rgba(var(--brand-accent-rgb), 0.12)"
+              stroke="rgba(var(--brand-accent-rgb), 0.38)"
               strokeWidth="1"
             />
             <path
               d="M9 4.5H5.5C4.95 4.5 4.5 4.95 4.5 5.5V9M27 4.5H30.5C31.05 4.5 31.5 4.95 31.5 5.5V9M31.5 27V30.5C31.5 31.05 31.05 31.5 30.5 31.5H27M9 31.5H5.5C4.95 31.5 4.5 31.05 4.5 30.5V27"
-              className="stroke-[#3F618E] dark:stroke-[#7EB0F2]"
+              stroke="var(--brand-accent)"
               strokeWidth="1.65"
               strokeLinecap="round"
             />
           </svg>
         ) : isCard ? (
           /* Calibrated wide ring for 3D tilt & interactive card surfaces */
-          <div className="w-full h-full rounded-full border border-[#3F618E]/55 dark:border-[#7EB0F2]/60 bg-[#3F618E]/6 dark:bg-[#7EB0F2]/10 transition-colors duration-150" />
+          <div
+            className="w-full h-full rounded-full border transition-colors duration-150"
+            style={{
+              borderColor: 'rgba(var(--brand-accent-rgb), 0.58)',
+              backgroundColor: 'rgba(var(--brand-accent-rgb), 0.08)',
+            }}
+          />
         ) : (
           /* Quiet default precision ring */
           <div className="w-full h-full rounded-full border-[1.25px] border-[#0B0D11]/38 dark:border-[#F4F6FA]/45 transition-colors duration-150" />
@@ -203,7 +210,7 @@ export const BionicCursor: React.FC = () => {
           transition={{ duration: 0.12 }}
           className={`absolute top-0 left-0 rounded-full will-change-transform ${
             isPointer || isCard
-              ? 'bg-[#3F618E] dark:bg-[#7EB0F2]'
+              ? 'bg-[var(--brand-accent)]'
               : 'bg-[#0B0D11] dark:bg-[#F4F6FA]'
           }`}
         />

@@ -1,4 +1,8 @@
-export type ServiceCategory = 'Alle' | 'Montage' | 'Herstellingen' | 'Onderhoud';
+export type ServiceCategory =
+  | 'Alle'
+  | 'Bezettingswerken'
+  | 'Tegelwerken'
+  | 'Opstijgend vocht';
 
 export interface ServiceItem {
   id: string;
@@ -10,155 +14,257 @@ export interface ServiceItem {
   featured?: boolean;
 }
 
+export const BUSINESS_INFO = {
+  name: 'GH Kluswerken',
+  tagline: 'Uw partner voor renovatie & afwerking',
+  phoneDisplay: '0484/29 46 47',
+  phoneHref: 'tel:+32484294647',
+  email: 'info@ghkluswerken.be',
+  emailHref: 'mailto:info@ghkluswerken.be',
+  websiteDisplay: 'www.ghkluswerken.be',
+  websiteUrl: 'https://www.ghkluswerken.be',
+  region: 'Vlaanderen & omliggende regio’s (België)',
+  hours: [
+    { days: 'Maandag – Vrijdag', time: '08:00 – 18:00' },
+    { days: 'Zaterdag', time: '09:00 – 13:00 (op afspraak)' },
+    { days: 'Zondag', time: 'Gesloten' },
+  ],
+} as const;
+
 export const SERVICES: ServiceItem[] = [
   {
-    id: 'montage-interieur',
+    id: 'bezettingswerken-binnen',
     index: '01.',
-    category: 'Montage',
-    title: 'Meubels & Interieurmontage',
+    category: 'Bezettingswerken',
+    title: 'Binnenbezetting & Pleisterwerk',
     summary:
-      'Stevig, waterpas en netjes afgesteld plaatsen van kasten, rekken, bureaus en wandpanelen in elke ruimte.',
+      'Schilderklaar uitvlakken en strak bepleisteren van muren en plafonds bij nieuwbouw of renovatie.',
     tasks: [
-      'Kasten, ladekasten en dressings monteren',
-      'Wandrekken, spiegels en tv-beugels ophangen',
-      'Gordijnrails, rolgordijnen en plinten plaatsen',
+      'Volledige wanden en plafonds spiegelglad pleisteren',
+      'Herstellen van scheuren, gaten en beschadigd pleisterwerk',
+      'Plaatsen van hoekprofielen en strakke raamdagkanten',
     ],
     featured: true,
   },
   {
-    id: 'herstellingen-woning',
+    id: 'tegelwerken-vloer-wand',
     index: '02.',
-    category: 'Herstellingen',
-    title: 'Kleine Herstellingen aan Huis',
+    category: 'Tegelwerken',
+    title: 'Vloer- & Wandtegelwerken',
     summary:
-      'Snelle en duurzame oplossing voor alledaagse mankementen aan deuren, ramen, beslag en sanitair.',
+      'Nauwkeurig en waterpas plaatsen van keramische tegels, grootformaat tegels en natuursteen met duurzame voegen.',
     tasks: [
-      'Klemmende deuren, scharnieren en deurklinken bijstellen',
-      'Kranen, sifons en wc-onderdelen vervangen',
-      'Loszittende stopcontacten en schakelaars vastzetten',
-    ],
-  },
-  {
-    id: 'onderhoud-binnen-buiten',
-    index: '03.',
-    category: 'Onderhoud',
-    title: 'Periodiek Woningonderhoud',
-    summary:
-      'Preventief nazicht en onderhoud binnen en buiten zodat kleine slijtage niet uitgroeit tot grote kosten.',
-    tasks: [
-      'Siliconen- en kitvoegen vernieuwen in badkamer en keuken',
-      'Houtwerk schuren, bijwerken en licht schilderwerk',
-      'Dakgoten, terrasdelen en tuinpoorten nalopen',
-    ],
-  },
-  {
-    id: 'verlichting-afwerking',
-    index: '04.',
-    category: 'Montage',
-    title: 'Verlichting & Ophangwerk',
-    summary:
-      'Veilig en strak bevestigen van hanglampen, wandspots, rookmelders en zware wanddecoratie op elk type muur.',
-    tasks: [
-      'Plafond- en wandverlichting aansluiten',
-      'Juiste pluggen voor gipskarton, steen of beton',
-      'Kabelgoten en afwerkingsprofielen plaatsen',
+      'Leefruimtes, keukens, hallen en inloopdouches betegelen',
+      'Uitlijnen en egaliseren van ondergronden voor strak legwerk',
+      'Waterdichte ontkoppelingsmatten en verzorgde voegafwerking',
     ],
     featured: true,
   },
   {
-    id: 'schrijnwerk-beslag',
-    index: '05.',
-    category: 'Herstellingen',
-    title: 'Schrijnwerk & Raambeslag',
+    id: 'opstijgend-vocht',
+    index: '03.',
+    category: 'Opstijgend vocht',
+    title: 'Behandeling Opstijgend Vocht',
     summary:
-      'Herstellen van kastschanieren, ladegeleiders, tochtstrips en binnendeuren voor soepel dagelijks gebruik.',
+      'Definitieve aanpak van vochtproblemen onderaan muren door professionele muurinjectie en zoutwerende afwerking.',
     tasks: [
-      'Keukenkastjes opnieuw uitlijnen en afstellen',
-      'Sloten, cilinders en tochtstrippen vernieuwen',
-      'Beschadigde plinten en afwerklijsten herstellen',
+      'Grondige vochtmeting en diagnose van aangetaste muren',
+      'Professionele muurinjectie tegen opstijgend grondvocht',
+      'Afkappen oud pleisterwerk en aanbrengen van saneerpleister',
+    ],
+    featured: true,
+  },
+  {
+    id: 'gyproc-afwerking',
+    index: '04.',
+    category: 'Bezettingswerken',
+    title: 'Cementering & Renovatiepleister',
+    summary:
+      'Sterke en vochtbestendige cementering voor kelders, plinten en badkamers klaar voor verdere betegeling.',
+    tasks: [
+      'Waterafstotende cementbezetting in natte ruimtes',
+      'Afwerken van gyprocwanden en voegen tot Q3/Q4 niveau',
+      'Uitvlakken van oneffen oude metselwerken',
     ],
   },
   {
-    id: 'seizoens-onderhoud',
-    index: '06.',
-    category: 'Onderhoud',
-    title: 'Seizoensklaar Maken',
+    id: 'badkamer-terras-tegels',
+    index: '05.',
+    category: 'Tegelwerken',
+    title: 'Badkamer- & Terrastegels',
     summary:
-      'Praktische onderhoudsbeurt per seizoen voor terras, buitenverlichting, tuinberging en buitenschrijnwerk.',
+      'Volledige waterdichting en maatwerk betegeling voor douches, spatwanden en vorstbestendige buitenterrassen.',
     tasks: [
-      'Terras en tuinmeubilair reinigen en vastzetten',
-      'Buitenkranen en scharnieren controleren',
-      'Kleine voeg- en herstelwerken buitenshuis',
+      'Kerdi-doek waterdichting rond inloopdouches en baden',
+      'Verstek zagen van tegelhoeken en nette siliconenvoegen',
+      'Terrastegels met correct afschot voor vlotte waterafvoer',
     ],
+  },
+  {
+    id: 'kelder-vochtherstel',
+    index: '06.',
+    category: 'Opstijgend vocht',
+    title: 'Vochtwering & Zoutwering',
+    summary:
+      'Voorkomen van schimmel, afbladderende verf en salpeteruitbloeiing door duurzame vochtwerende membranen.',
+    tasks: [
+      'Plaatsen van noppenfolies en zoutwerende beschermlagen',
+      'Herstellen van plinten en muren na vochtdroging',
+      'Preventieve controle op koudebruggen en vochtinsijpeling',
+    ],
+  },
+];
+
+export interface RealizationCase {
+  id: string;
+  index: string;
+  category: Exclude<ServiceCategory, 'Alle'>;
+  title: string;
+  scope: string;
+  challenge: string;
+  solution: string;
+  deliverables: string[];
+  visualKey: 'joinery' | 'lighting' | 'tools';
+}
+
+export const REALIZATIONS: RealizationCase[] = [
+  {
+    id: 'totaalbezetting-renovatie',
+    index: '01.',
+    category: 'Bezettingswerken',
+    title: 'Schilderklare totaalbezetting woningrenovatie',
+    scope: 'Woonkamer, hal en slaapkamers · ± 185 m² wand- en plafondoppervlak',
+    challenge:
+      'Oude, oneffen muren met scheurvorming na het vervangen van ramen en elektriciteitsleidingen.',
+    solution:
+      'Volledige voorbehandeling met hechtprimer, plaatsen van gegalvaniseerde hoekprofielen en spiegelglad pleisterwerk tot aan alle raamdagkanten.',
+    deliverables: [
+      'Volledig vlak en schilderklaar opgeleverd',
+      'Naadloze afwerking rond nieuw buitenschrijnwerk',
+      'Proper afgeplakte vloeren en stofvrije oplevering',
+    ],
+    visualKey: 'lighting',
+  },
+  {
+    id: 'badkamer-grootformaat-tegels',
+    index: '02.',
+    category: 'Tegelwerken',
+    title: 'Inloopdouche & vloertegels in grootformaat',
+    scope: 'Badkamer & leefruimte · 60×120 cm en 80×80 cm keramisch',
+    challenge:
+      'Waterdichte aansluiting rond de inloopdouche en naadloos doorlopende voeglijnen van hal naar badkamer.',
+    solution:
+      'Cementbezetting in de natte zone, volledige Kerdi-waterdichting, laser-uitgelijnd legwerk met leveling-systeem en schimmelwerende epoxy-/siliconenvoegen.',
+    deliverables: [
+      '100% waterdichte ondergrond onder douche en wand',
+      'Strak in verstek gezaagde buitenhoeken',
+      'Perfect afschot richting douchedrain',
+    ],
+    visualKey: 'joinery',
+  },
+  {
+    id: 'vochtaanpak-benedenverdieping',
+    index: '03.',
+    category: 'Opstijgend vocht',
+    title: 'Muurinjectie & zoutwerende saneerpleister',
+    scope: 'Benedenverdieping rijwoning · 24 lopende meter aangetaste muur',
+    challenge:
+      'Afbladderende verf, loskomend pleisterwerk en zoutuitbloeiing door opstijgend grondvocht tot 90 cm hoogte.',
+    solution:
+      'Afkappen van aangetast pleisterwerk tot boven de zoutgrens, boren en injecteren met hoogwaardige hydrofobe injectiegel, zoutmembraan en ademende saneerpleister.',
+    deliverables: [
+      'Waterdichte horizontale vochtbarrière in de muur',
+      'Bescherming tegen schadelijke muurzouten',
+      'Klaar voor plinten en schilderwerk na droging',
+    ],
+    visualKey: 'tools',
+  },
+];
+
+export const AEO_DIRECT_ANSWERS = [
+  {
+    term: 'Wat doet GH Kluswerken?',
+    definition:
+      'GH Kluswerken is een gespecialiseerde Belgische renovatie- en afwerkingspartner voor binnenbezetting & pleisterwerk, vloer- en wandtegelwerken en definitieve behandeling van opstijgend vocht.',
+  },
+  {
+    term: 'Hoe verloopt een aanvraag?',
+    definition:
+      'Na telefonisch contact via 0484/29 46 47 of het offerteformulier volgt een plaatsbezoek voor opmeting of vochtmeting, gevolgd door een transparante offerte op maat en een vaste uitvoeringsdatum.',
+  },
+  {
+    term: 'Waarom één partner voor vocht, bezetting en tegels?',
+    definition:
+      'Vochtwering, pleisterwerk en tegelwerk volgen elkaar rechtstreeks op in een renovatie. Door alle drie door GH Kluswerken te laten uitvoeren sluit elke laag technisch perfect op elkaar aan.',
   },
 ];
 
 export const ABOUT_VALUES = [
   {
     index: '01.',
-    title: 'Eén vakkundig aanspreekpunt',
+    title: 'Drie kernexpertises onder één dak',
     detail:
-      'Geen verschillende onderaannemers voor kleine klussen: van montage tot herstelling wordt alles netjes gebundeld uitgevoerd.',
+      'Bezettingswerken, tegelwerken en behandeling tegen opstijgend vocht sluiten naadloos op elkaar aan zonder wachttijden tussen aannemers.',
   },
   {
     index: '02.',
-    title: 'Heldere afspraken vooraf',
+    title: 'Direct persoonlijk overleg',
     detail:
-      'Duidelijke communicatie over planning, benodigde materialen en aanpak voordat we bij jou aan huis starten.',
+      'Rechtstreeks contact op 0484/29 46 47 of info@ghkluswerken.be voor heldere planning en eerlijk advies ter plaatse.',
   },
   {
     index: '03.',
-    title: 'Eigen professioneel gereedschap',
+    title: 'Duurzame materialen & precisie',
     detail:
-      'Uitgerust voor hout, steen, gipskarton en lichte montage zodat elke bevestiging stevig en waterpas blijft.',
+      'Van laser-waterpas uitlijning tot professionele injectiegels en saneerpleisters voor een resultaat dat tientallen jaren meegaat.',
   },
   {
     index: '04.',
-    title: 'Propere en zorgvuldige oplevering',
+    title: 'Propere en stipte oplevering',
     detail:
-      'We beschermen vloeren en meubels tijdens het werk en laten elke ruimte opgeruimd achter.',
+      'We werken netjes met aandacht voor bescherming van vloeren en ramen en leveren elke werf opgeruimd en schilderklaar af.',
   },
 ];
 
 export const PROCESS_STEPS = [
   {
     step: '01.',
-    title: 'Vraag je klus aan',
+    title: 'Contact & plaatsbezoek',
     description:
-      'Stuur een korte omschrijving of bel ons rechtstreeks. Je krijgt snel reactie met een passend tijdstip.',
+      'Bel naar 0484/29 46 47 of stuur je aanvraag door. We komen langs om muren, tegels of vocht op te meten.',
   },
   {
     step: '02.',
-    title: 'Duidelijk overzicht',
+    title: 'Heldere offerte & planning',
     description:
-      'We bekijken samen wat nodig is qua materialen en tijd zodat je precies weet waar je aan toe bent.',
+      'Je ontvangt een transparant voorstel met duidelijke materiaalkeuze en concrete uitvoeringsdatum.',
   },
   {
     step: '03.',
-    title: 'Vakkundige uitvoering aan huis',
+    title: 'Strakke renovatie & afwerking',
     description:
-      'Montage, herstellingen en onderhoud worden verzorgd uitgevoerd met controle op elke afwerking.',
+      'Wij voeren bezetting, tegelwerk of vochtbehandeling vakkundig uit tot een duurzame, nette oplevering.',
   },
 ];
 
 export const VISION_PILLARS = [
   {
     index: '01.',
-    title: 'Herstellen boven wegwerpen',
-    subtitle: 'Duurzaam omgaan met je interieur en woning',
-    body: 'Veel problemen aan kasten, deuren, kranen of afwerkingen vragen geen dure vervanging. Door tijdig en vakkundig te herstellen gaat materiaal jaren langer mee.',
+    title: 'Grondig bij de bron aanpakken',
+    subtitle: 'Eerst een droge, gezonde ondergrond',
+    body: 'Mooi bezettings- en tegelwerk begint onder het oppervlak. Door opstijgend vocht eerst correct te behandelen vermijden we terugkerende schade.',
   },
   {
     index: '02.',
-    title: 'Rust door goed onderhoud',
-    subtitle: 'Kleine klussen meteen opgelost',
-    body: 'Een losse deurklink, scheve kastdeur of versleten kitvoeg blijft vaak maanden liggen. Wij zorgen dat die lijst met kleine klussen in één bezoek verdwijnt.',
+    title: 'Millimeterwerk in afwerking',
+    subtitle: 'Strakke lijnen en egale wanden',
+    body: 'Of het nu gaat om spiegelglad pleisterwerk of grootformaat vloertegels: elk hoekprofiel en elke voeglijn krijgt de volle aandacht.',
   },
   {
     index: '03.',
-    title: 'Respect voor elke woning',
-    subtitle: 'Zorgvuldigheid in voorbereiding en afwerking',
-    body: 'Goed vakwerk zie je niet alleen in het eindresultaat, maar ook in hoe netjes er gewerkt wordt: met aandacht voor details, vloeren en duidelijke afspraken.',
+    title: 'Betrouwbare partner in renovatie',
+    subtitle: 'Afspraak is afspraak',
+    body: 'Als vaste partner voor renovatie en afwerking werken we met duidelijke communicatie, stipte planning en respect voor jouw woning.',
   },
 ];
 
@@ -171,46 +277,45 @@ export interface FaqItem {
 
 export const FAQ_ITEMS: FaqItem[] = [
   {
-    id: 'planning-snelheid',
+    id: 'vocht-vs-bezetting',
     index: '01.',
-    question: 'Hoe snel kan een klus aan huis ingepland worden?',
+    question: 'Kan bezettingswerk meteen na een behandeling tegen opstijgend vocht?',
     answer:
-      'Kleine en middelgrote klussen plannen we doorgaans binnen enkele werkdagen in. Na je aanvraag via het formulier of telefonisch contact ontvang je meteen een concreet voorstel voor datum en richttijd.',
+      'Na muurinjectie geven we de muur de nodige droogtijd en gebruiken we een ademende, zoutwerende saneerpleister. Zo blijft het nieuwe pleisterwerk vrij van blazen en vochtkringen.',
   },
   {
-    id: 'gereedschap-materiaal',
+    id: 'tegels-zelf-kiezen',
     index: '02.',
-    question: 'Welke gereedschappen en materialen moet ik zelf voorzien?',
+    question: 'Mag ik zelf mijn vloer- of wandtegels aankopen?',
     answer:
-      'HG Klusjes brengt eigen professioneel gereedschap, meetapparatuur en standaard bevestigingsmateriaal (zoals schroeven en pluggen) mee. Specifieke onderdelen zoals kranen, verlichting of meubels kunnen door jou worden voorzien of vooraf in overleg worden meegebracht.',
+      'Zeker. Jij kiest de tegels die bij je interieur passen, en wij adviseren indien gewenst over formaat, lijmkeuze, ondergrond en benodigde vierkante meters inclusief snijverlies.',
   },
   {
-    id: 'klussen-combineren',
+    id: 'schilderklaar-pleister',
     index: '03.',
-    question: 'Kan ik meerdere kleine klussen combineren in één bezoek?',
+    question: 'Hoe glad wordt het bezettingswerk opgeleverd?',
     answer:
-      'Ja, dat is juist heel efficiënt. Je mag gerust een lijstje met verschillende montage-, herstel- en onderhoudsklussen doorgeven zodat alles in één afspraak netjes afgewerkt wordt.',
+      'We leveren binnenbezetting strak en egaal op, klaar om na droging te primen en schilderen zonder intensief bijplamuren.',
   },
   {
-    id: 'prijsafspraak',
+    id: 'badkamer-waterdicht',
     index: '04.',
-    question: 'Hoe gebeurt de afspraak rond prijs en tijdsduur?',
+    question: 'Voorzien jullie ook waterdichting bij badkamertegelwerken?',
     answer:
-      'Voor aanvang bespreken we duidelijk de verwachte duur en eventuele materiaalkosten op basis van jouw omschrijving of foto’s. Zo kom je nooit voor onverwachte kosten te staan.',
+      'Ja. Rond inloopdouches, baden en natte zones brengen we steeds professionele waterdichtingsmatten en kimbanden aan onder de tegels en cementbezetting.',
   },
   {
-    id: 'muurtypes-pluggen',
+    id: 'vochtdiagnose',
     index: '05.',
-    question: 'Kunnen jullie ophangen op zowel gipskarton als beton of baksteen?',
+    question: 'Hoe weet ik zeker of het om opstijgend vocht gaat?',
     answer:
-      'Zeker. We controleren eerst het muurtype en eventuele leidingen en gebruiken telkens de geschikte hollewand-, slag- of universele pluggen zodat kasten, rekken en verlichting veilig verankerd zijn.',
+      'Tijdens een plaatsbezoek meten we het vochtgehalte op verschillende hoogtes in de muur en sluiten we lekkages of condens uit voordat we een behandeling voorstellen.',
   },
   {
-    id: 'propere-oplevering',
+    id: 'offerte-regio',
     index: '06.',
-    question: 'Wordt de werkplek achteraf netjes achtergelaten?',
+    question: 'Hoe vraag ik een vrijblijvende offerte aan bij GH Kluswerken?',
     answer:
-      'Ja. Tijdens het boren en monteren beschermen we vloeren en meubels, ruimen we stof en verpakkingsmateriaal op en testen we samen elke uitgevoerde klus voor we vertrekken.',
+      'Je kan ons rechtstreeks bellen op 0484/29 46 47, mailen naar info@ghkluswerken.be of het offerteformulier invullen op de contactpagina.',
   },
 ];
-
